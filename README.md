@@ -1,6 +1,6 @@
 # 🖥️ Web Development Mini Projects  
 
-This repository contains interactive and beginner-friendly **Web Applications** built using **HTML, CSS, and JavaScript**.  
+This repository contains interactive and beginner-friendly **Web Applications** built using **HTML**.  
 Each project demonstrates key concepts of front-end development, DOM manipulation, and user interaction.  
 
 ---
@@ -13,4 +13,4 @@ Each project demonstrates key concepts of front-end development, DOM manipulatio
 - menu colour change will hovering over it  
 - Simple and clean UI  
 
-👉 **Skills Used:** HTML, CSS, JavaScript (setInterval, DOM events)
+👉 **Skills Used:** HTML
