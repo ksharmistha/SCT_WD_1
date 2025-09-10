@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Landing Page</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth; /* Smooth scrolling */
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      line-height: 1.6;
+      color: #fff;
+      background: #1e1e2f;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: transparent;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      z-index: 1000;
+    }
+
+    nav.scrolled {
+      background: rgba(0, 0, 0, 0.9);
+      box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ff4757;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: #47c2ff;
+      color: #fff;
+    }
+
+    /* Hero sections */
+    section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5rem;
+      text-align: center;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    #home { background: linear-gradient(135deg, #47ffea, #6bd8ff); }
+    #about { background: linear-gradient(135deg, #37bffa, #52a7ed); }
+    #services { background: linear-gradient(135deg, #1e90ff, #70a1ff); }
+    #contact { background: linear-gradient(135deg, #2ea6d5, #7bdced); }
+
+    section h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    }
+
+    section p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: rgba(0,0,0,0.9);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        display: none;
+        border-radius: 0 0 10px 10px;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      nav .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 28px;
+        color: white;
+      }
+    }
+    .menu-toggle {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="logo">today<span style="color:#1e90ff;">4</span>tomorrow</div>
+    <span class="menu-toggle">&#9776;</span>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sections -->
+  <section id="home">
+    <h1>Welcome to Today4Tomorrow</h1>
+    <p>Innovating for a sustainable tomorrow .</p>
+  </section>
+
+  <section id="about">
+    <h1>About Us</h1>
+    <p>We are committed to turning waste into valuable resources using modern technology. 
+        To manage the waste and e-waste to make the world a better place to live in.</p>
+  </section>
+
+  <section id="services">
+    <h1>Our Services</h1>
+    <p>From plastic and  e-waste converters to green innovations, we make energy cleaner.</p>
+  </section>
+
+  <section id="contact">
+    <h1>Contact Us</h1>
+    <p>Let’s build the future together. Reach out for collaborations and ideas.</p>
+  </section>
+
+  <!-- Script -->
+  <script>
+    // Scroll navbar effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Toggle menu
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('nav ul');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
